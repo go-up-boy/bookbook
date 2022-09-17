@@ -22,8 +22,7 @@
 - MYSQL_ROOT_PASSWORD 必须设置 mysql root 用户密码
 - -p 3306:3306 映射端口 本地:容器
 - --name 设置容器名称
-<br>
-```
+```shell
 docker run -d -p 3306:3306 --privileged=true -v C:/Users/z/mysql/log:/var/log -v C:/Users/z/mysql/data:/var/lib/mysql -v C:/Users/z/mysql/conf:/etc/mysql/conf.d  -e MYSQL_ROOT_PASSWORD=123456 --name mysql mysql:8.0
 ```
 
