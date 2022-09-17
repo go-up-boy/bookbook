@@ -1,9 +1,9 @@
-#Docker部署mysql主从架构
+# Docker部署mysql主从架构
 
 * 系统 Windows 11 WSL2
 * 镜像 Mysql:8.0
 
-#基础知识
+# 基础知识
 ### 1.Binlog 解析
 * binlog即binary log，二进制日志文件。它记录了数据库所有执行的DDL和DML语句(除了数据查询语句select、show等)，以事件形式记录并保存在二进制文件中
 * binlog主要有两个应用场景
@@ -15,7 +15,7 @@
   * mixed：混合模式复制，以上两种模式的混合使用，一般的复制使用statement模式保存binlog，对于statement模式无法复制的操作使用row模式保存binlog，MySQL会根据执行的SQL语句选择日志保存方式
 * binlog模式在MySQL 5.7.7之前，默认为statement，在之后的版本中，默认为row模式。因为row模式更安全，可以清楚记录每行数据修改的细节
 
-##Master 节点配置
+## Master 节点配置
 1. 运行master容器:
 - --privileged=true 赋予容器内root权限
 - -v 容器卷映射 本地:容器
@@ -59,7 +59,7 @@ create user 'slave'@'%' identified by '123456';
 grant replication slave, replication client on *.* to 'slave'@'%';
 ```
 
-##Slave 节点配置
+## Slave 节点配置
 1. 运行从节点容器
 ```shell
 docker run -d -p 3307:3306 --privileged=true -v C:/Users/z/mysql_slave/log:/var/log -v C:/Users/z/mysql_slave/data:/var/lib/mysql -v C:/Users/z/mysql_slave/conf:/etc/mysql/conf.d  -e MYSQL_ROOT_PASSWORD=123456 --name mysql_slave mysql:8.0
