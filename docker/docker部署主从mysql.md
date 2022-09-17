@@ -23,7 +23,9 @@
 - -p 3306:3306 映射端口 本地:容器
 - --name 设置容器名称
 <br>
-```docker run -d -p 3306:3306 --privileged=true -v C:/Users/z/mysql/log:/var/log -v C:/Users/z/mysql/data:/var/lib/mysql -v C:/Users/z/mysql/conf:/etc/mysql/conf.d  -e MYSQL_ROOT_PASSWORD=123456 --name mysql mysql:8.0```
+```
+docker run -d -p 3306:3306 --privileged=true -v C:/Users/z/mysql/log:/var/log -v C:/Users/z/mysql/data:/var/lib/mysql -v C:/Users/z/mysql/conf:/etc/mysql/conf.d  -e MYSQL_ROOT_PASSWORD=123456 --name mysql mysql:8.0
+```
 
 2. 启动后在映射的容器卷 C:/Users/z/mysql/conf 创建my.cnf配置文件，并重启容器
 ```
