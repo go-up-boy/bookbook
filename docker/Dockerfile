@@ -1,0 +1,4 @@
+FROM php:7.4-fpm
+ENV MYPATH /www/wwwroot
+COPY . $MYPATH
+WORKDIR $MYPATH
