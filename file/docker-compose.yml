@@ -1,0 +1,46 @@
+version: "3.0"
+services:
+  php:
+    container_name: web-php
+    image: php:7.4-fpm
+    working_dir: /www/wwwroot
+    ports:
+      - "9000:9000"
+    privileged: true
+    volumes:
+      - C:\Users\z\nginx\www:/www/wwwroot
+    links:
+      - mysql:mysql
+  nginx:
+    container_name: web-nginx
+    image: nginx:latest
+    working_dir: /www/wwwroot
+    ports:
+      - "8000:80"
+    privileged: true
+    volumes:
+      - C:\Users\z\nginx\www:/www/wwwroot
+      - C:\Users\z\nginx\conf:/etc/nginx/conf.d
+    links:
+       - php:php
+  mysql:
+    container_name: service-mysql
+    image: mysql:8.0
+    ports:
+      - "3306:3306"
+    privileged: true
+    volumes:
+      - C:/Users/z/mysql/log:/var/log
+      - C:/Users/z/mysql/data:/var/lib/mysql
+      - C:/Users/z/mysql/conf:/etc/mysql/conf.d
+    environment:
+      MYSQL_ROOT_PASSWORD: 123456
+  redis:
+    container_name: service-redis
+    image: redis:6.0.16
+    ports:
+      - "6379:6379"
+    privileged: true
+    volumes:
+      - C:/Users/z/redis/redis-master:/data
+    entrypoint: redis-server --appendonly yes --port 6379
