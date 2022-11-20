@@ -1,0 +1,27 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: env-pod
+
+spec:
+  containers:
+  - env:
+      - name: USERNAME
+        valueFrom:
+          secretKeyRef:
+            name: secret1
+            key: user
+      - name: PASSWORD
+        valueFrom:
+          secretKeyRef:
+            name: secret1
+            key: password
+      - name: DEBUG
+        valueFrom:
+          configMapKeyRef:
+            name: info
+            key: debug
+    image: busybox
+    name: busy
+    imagePullPolicy: IfNotPresent
+    command: ["/bin/sleep", "300"]
