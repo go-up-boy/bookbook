@@ -4,7 +4,7 @@
 * 版本 portainer 2.15
 
 
-1. 拉取最新版本
+1. 拉取最新版本 
 ```shell
 docker pull portainer/portainer-ce:latest
 ```
