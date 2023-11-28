@@ -15,3 +15,8 @@ https://github.com/songgao/water
 ## golangFamily
 【超全golang面试题合集+golang学习指南+golang知识图谱+成长路线】 一份涵盖大部分golang程序员所需要掌握的核心知识。
 https://github.com/xiaobaiTech/golangFamily
+
+## 免费激活Windows
+一款使用CSharp编写的 Windows 10 和 Windows 11 数字权利激活工具。
+https://github.com/TGSAN/CMWTAT_Digital_Edition
+网址：https://cmwtat.cloudmoe.com/cn.html
