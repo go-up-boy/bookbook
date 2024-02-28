@@ -20,3 +20,6 @@ https://github.com/xiaobaiTech/golangFamily
 一款使用CSharp编写的 Windows 10 和 Windows 11 数字权利激活工具。
 https://github.com/TGSAN/CMWTAT_Digital_Edition
 网址：https://cmwtat.cloudmoe.com/cn.html
+
+## Jet全家桶激活码
+https://github.com/superbeyone/JetBrainsActiveCode
